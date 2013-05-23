@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Welcome to Anonymous Blog</h1>
+  <p>Where no one knows your name!!!</p>
+  
+  <br>
+  <br>
+  <p><a href="/login">Login</a></p>
+  <p><a href="/create">Create a new account</a></p>
+  <p><a href="/logout">Logout</a></p>
+</div>
+
+<div class="content">
+  <h2>Anony Blog</h2>
+  <% Post.all.each do |post|%>
+    
+    <li>Post: <a href="/post/<%=post.id%>"><%=post.title%></a></li>
+
+    <ul>
+    
+    <li><%=post.body%></li>
+    </ul>
+    <%end%>
+  
+
+  </ol>
+</div>
+

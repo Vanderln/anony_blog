@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Welcome to your main page <%=@author.name%>!!</h1>
+  <ul>
+    <li><a href="/post/create_post">Create New Post</a></li>
+    <li>Create New Tag</li>
+
+  </ul>
+  <ol>Here are your current posts: 
+    <%Post.where(:author_id => session[:user_id]).each do |post|%>
+    <li>Post: <a href="/post/<%=post.id%>"><%=post.title%></a>
+      <br>
+        <%=post.body%>
+        <div>Edit</div>
+        <div>Delete</div>
+    </li>
+    <%end%>
+  </ol>
+
+  <ol>Here are your current tags: 
+    <%Tag.where(:author_id => session[:user_id]).each do |tag|%>
+    <li><a href="/show_one_post"><%=tag.title%></a></li>
+        <div>Edit</div>
+        <div>Delete</div>
+    <%end%>
+  </ol>
+
+
+  
+</div>

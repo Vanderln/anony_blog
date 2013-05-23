@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Post and Tags</h3>
+    
+    <h4> Post Title: <%= @post.title %></h4>
+    
+      <%= @post.body %>
+    <br>
+      <%@post.tags.each do |tag|%>
+    <ul>
+      <li>Tag: <%=tag.title%></li>
+    </ul>
+    
+    <%end%>
+    <br>
+    <div>Edit this Post</div>
+    <div>Delete this Post</div>  
+
+  <p><a href="/logout">Logout</a></p>
+</div>

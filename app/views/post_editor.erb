@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Edit Your Post</h1>
+  <form action="/posts/update/<%=@post.id%>" method="post">
+    <!-- <label for="description">Description</label> -->
+    <p>Title:</p>
+    <br>
+    <input id="title" type="text" name="post[title]" value="<%=@post.title%>">
+    <br>
+    
+    
+    <p>Price: </p>
+    <br>
+    <input id="price" type="text" name="post[price]" value="<%=@post.price%>">
+    <br>
+    <p>Description:</p>
+    <br>
+    <textarea name="post[description]" cols="30" rows="10" "><%=@post.description%>
+    </textarea>
+    <br>
+    <input type="submit">
+  </form>
+</div>
